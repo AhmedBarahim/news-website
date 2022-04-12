@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <!-- Required meta tags -->
+    <script src="date_time.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-+qdLaIRZfNu4cVPK/PxJJEy0B0f3Ugv8i482AKY7gwXwhaCroABd086ybrVKTa0q" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/62394f2852.js" crossorigin="anonymous"></script>
+
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/resp.css" rel="stylesheet">
+
+
+    <title>لايك نيوز | موقع اخباري</title>
+</head>
+
+<body>
+    <header>
+        <div class="bg-secondary">
+            <div class="container p-1">
+                <div class="text-white d-flex justify-content-between">
+                    <div>
+                        <i class="fas fa-clock d-inline"></i>
+                        <div class="d-inline" id="getDateTime"></div>
+                    </div>
+                    <div>
+                        <i class="fab fa-facebook mx-1"></i>
+                        <i class="fab fa-twitter mx-1"></i>
+                        <i class="fas fa-envelope mx-1"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container my-1">
+            <div class="row">
+                <div class="col align-self-center d-none d-md-block">
+                    <h2 class="display-5 fw-bold">لايك نيوز</h2>
+                </div>
+
+                <div class="col align-self-center">
+                    <img class="img-fluid" src="images/ads.png">
+                </div>
+
+            </div>
+
+        </div>
+        <div class="offcanvas offcanvas-start" id="demo">
+            <div class="offcanvas-header p-3">
+                <h1 class="offcanvas-title">لايك نيوز</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <hr class="m-0">
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto nav-link-text">
+                    <li class="nav-item active-link mx-md-3">
+                        <a class="nav-link " href="javascript:void(0)">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">أخبار محلية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">أخبار دولية وعربية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">اقتصاد</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">رياضة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">ثقافة وفن</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-1" type="text" placeholder="بحث">
+                    <button class="btn btn-danger" type="button"><i class="fas fa-search text-light"></i></button>
+                </form>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-danger sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-md-none" href="javascript:void(0)">لايك نيوز</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-white" id="mynavbar">
+                    <ul class="navbar-nav me-auto nav-link-text">
+                        <li class="nav-item active-link mx-md-3">
+                            <a class="nav-link " href="javascript:void(0)">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">أخبار محلية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">أخبار دولية وعربية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">اقتصاد</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">رياضة</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">ثقافة وفن</a>
+                        </li>
+                    </ul>
+                    <form class="d-none d-md-flex">
+                        <input class="form-control me-1" type="text" placeholder="بحث">
+                        <button class="btn btn-light" type="button"><i class="fas fa-search text-danger"></i></button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+
+        <div class="row sticky-top">
+            <div class="col-12 col-lg-1 p-0 sticky-top">
+                <div class="bg-dark p-2 text-center text-white fw-bold px-2">
+                    <span class="spinner-grow spinner-grow-sm me-1 text-danger"></span> الأخبار
+                </div>
+            </div>
+            <div class="col-12 col-lg-11 p-0 text-white">
+                <div class="marquee p-2 bg-secondary">
+                    <div class="marquee__item">
+                        يوت انيم أد مينيم فينايم,كيواس نوستريد أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا
+                        كوممودو كونسيكيوات.
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                        ديواس أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت
+                        نيولا باراياتيور.
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                        مثنبمث تربترخت ىرتهتر ارهب هترخبتخ خيتخ هتختخي خهيخخ يتيتبى يتيبيخه ىلتخيتلخيتلخ خح خيتخيت.
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                        نبحين متلختخ تت لاهعخاخلا الاقخسنكى تنس هت سلهسعهل ه يلهخيلاهيتلهي لتيهخ يخلايخهيبهختيختيخ ينيى
+                        هختسخحبتخخ.
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                        بنلاتنب لخبهخ قهعثخه لتثنةم نخهخبلابخنخبلانخ منملا.
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                        بلتبتل خلنبملمبلز كلنبنلحبنحخنلخي خخهثخهخهثخخحسنحسحنحسجثقنج نلقحنحمقنللزلبخحلينحخليز.
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                        منيمشنيمنيم نيرتبيت ه خلحخث لخثلتث ثخحلثعل ضح ثخخث ثخلثخل ثخلاخلا ز
+                        <span class="marquee__seperator"><i class="fas fa-bdot-circle"></i></span>
+                    </div>
+                    <div class="marquee__item">
+                        يوت انيم أد مينيم فينايم,كيواس نوستريد أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا
+                        كوممودو كونسيكيوات.
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                        ديواس أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت
+                        نيولا باراياتيور.
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                        مثنبمث تربترخت ىرتهتر ارهب هترخبتخ خيتخ هتختخي خهيخخ يتيتبى يتيبيخه ىلتخيتلخيتلخ خح خيتخيت.
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                        نبحين متلختخ تت لاهعخاخلا الاقخسنكى تنس هت سلهسعهل ه يلهخيلاهيتلهي لتيهخ يخلايخهيبهختيختيخ ينيى
+                        هختسخحبتخخ.
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                        بنلاتنب لخبهخ قهعثخه لتثنةم نخهخبلابخنخبلانخ منملا.
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                        بلتبتل خلنبملمبلز كلنبنلحبنحخنلخي خخهثخهخهثخخحسنحسحنحسجثقنج نلقحنحمقنللزلبخحلينحخليز.
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                        منيمشنيمنيم نيرتبيت ه خلحخث لخثلتث ثخحلثعل ضح ثخخث ثخلثخل ثخلاخلا ز
+                        <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-lg-6 p-0">
+                <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-touch="false">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/news-1.jpeg" class="d-block w-100 img-fluid img-slider" alt="...">
+                            <div class="carousel-caption slider-caption">
+                                <h5 class="p-md-3 p-sm-1 fw-bold mx-2">تصريح عماني بشأن زيارة المبعوث الأممي إلى صنعاء
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/news-5.jpeg" class="d-block w-100 img-fluid img-slider" alt="...">
+                            <div class="carousel-caption slider-caption">
+                                <h5 class="p-md-3 p-sm-1 fw-bold mx-2">شاهد أول صورة لنجل الرئيس هادي عقب تسليم السلطة
+                                    للمجلس الرئاسي</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/news-3.jpeg" class="d-block w-100 img-fluid img-slider" alt="...">
+                            <div class="carousel-caption slider-caption">
+                                <h5 class="p-md-3 p-sm-1 fw-bold mx-2">نشيلوتي يشعل حماس جماهير ريال مدريد</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button> -->
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col p-0 test">
+                        <img src="images/news-2.jpeg" alt="Avatar" class="img-fluid w-100 d-block"
+                            style="height: 30vh;">
+                        <h5 class="overlay p-2 fw-bold m-0">عقب وصول المبعوث الأممي إلى صنعاء .. توجيه رسالة سعودية
+                            لحجماعة الحوثي</h5>
+                    </div>
+                    <div class="col p-0 test">
+                        <img src="images/news-4.jpeg" alt="Avatar" class="img-fluid w-100 d-block"
+                            style="height: 30vh;">
+                        <h5 class="overlay p-2 fw-bold m-0">رسالة قصيرة من بنزيما لجماهير ريال مدريد</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col p-0 test">
+                        <img src="images/news-5.jpeg" alt="Avatar" class="img-fluid w-100 d-block"
+                            style="height: 30vh;">
+                        <h5 class="overlay p-2 fw-bold m-0">شاهد أول صورة لنجل الرئيس هادي عقب تسليم السلطة للمجلس
+                            الرئاسي</h5>
+
+                    </div>
+                    <div class="col p-0 test">
+                        <img src="images/news-6.jpeg" alt="Avatar" class="img-fluid w-100 d-block"
+                            style="height: 30vh;">
+                        <h5 class="overlay p-2 fw-bold m-0">محامي صالح يلتقي رئيس مجلس القيادة الرئاسي رشاد العليمي
+                            ويتحدث عنه بهذه الكلمات</h5>
+
+                    </div>
+                </div>
+            </div>
+            <section class="bg-light py-3">
+                <div class="row">
+                    <div class="col-lg-1 d-none d-md-block text-center">
+                        <img src="images/ads-2.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-12 d-md-none text-center m-2">
+                        <img src="images/ads.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="row">
+                            <div class="col-lg-9 col-md-12">
+                                <div class="col-12">
+                                    <div class="section-title">
+                                        <h4 class="m-0 fw-bold">أخبار محلية</h4>
+                                        <a class="text-secondary" href="">عرض الكل</a>
+
+                                    </div>
+                                    <div class="bg-white p-1 mb-2">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <img src="images/news-1.jpeg" alt="" class="img-fluid w-100">
+                                            </div>
+                                            <div class="col-6 align-self-center">
+                                                <h4 class="my-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h4>
+                                                <p>لتحخفت لتح ح بلنحخب لن حيحلن حق يحنلحقم حمينحخ قاحم نحق قنا حمبحخ
+                                                    نقحبحمؤحماحمب نحبممح ابمحابمحانبمح حما
+                                                    حقنامحبنامحبناحمنابلمحانمحانحمينحمنح</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <img src="images/news-1.jpeg" alt="" class="img-fluid w-100">
+                                            <h6 class="my-2 bg-white p-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h6>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="images/news-1.jpeg" alt="" class="img-fluid w-100">
+                                            <h6 class="my-2 bg-white p-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h6>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="images/news-1.jpeg" alt="" class="img-fluid w-100">
+                                            <h6 class="my-2 bg-white p-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <img src="images/ads.png" class="img-fluid" alt="">
+                                </div>
+                                <hr>
+                                <div class="col-12">
+                                    <div class="section-title">
+                                        <h4 class="m-0 fw-bold">أخبار دولية وعربية</h4>
+                                        <a class="text-secondary" href="">عرض الكل</a>
+
+                                    </div>
+                                    <div class="bg-white p-1 mb-2">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <img src="images/news-2.jpeg" alt="" class="img-fluid w-100">
+                                            </div>
+                                            <div class="col-6 align-self-center">
+                                                <h4 class="my-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h4>
+                                                <p>لتحخفت لتح ح بلنحخب لن حيحلن حق يحنلحقم حمينحخ قاحم نحق قنا حمبحخ
+                                                    نقحبحمؤحماحمب نحبممح ابمحابمحانبمح حما
+                                                    حقنامحبنامحبناحمنابلمحانمحانحمينحمنح</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <img src="images/news-2.jpeg" alt="" class="img-fluid w-100">
+                                            <h6 class="my-2 bg-white p-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h6>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="images/news-2.jpeg" alt="" class="img-fluid w-100">
+                                            <h6 class="my-2 bg-white p-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h6>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="images/news-2.jpeg" alt="" class="img-fluid w-100">
+                                            <h6 class="my-2 bg-white p-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <img src="images/ads.png" class="img-fluid" alt="">
+                                </div>
+                                <hr>
+                                <div class="col-12">
+                                    <div class="section-title">
+                                        <h4 class="m-0 fw-bold">رياضة</h4>
+                                        <a class="text-secondary" href="">عرض الكل</a>
+
+                                    </div>
+                                    <div class="bg-white p-1 mb-2">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <img src="images/news-3.jpeg" alt="" class="img-fluid w-100">
+                                            </div>
+                                            <div class="col-6 align-self-center">
+                                                <h4 class="my-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h4>
+                                                <p>لتحخفت لتح ح بلنحخب لن حيحلن حق يحنلحقم حمينحخ قاحم نحق قنا حمبحخ
+                                                    نقحبحمؤحماحمب نحبممح ابمحابمحانبمح حما
+                                                    حقنامحبنامحبناحمنابلمحانمحانحمينحمنح</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <img src="images/news-3.jpeg" alt="" class="img-fluid w-100">
+                                            <h6 class="my-2 bg-white p-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h6>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="images/news-3.jpeg" alt="" class="img-fluid w-100">
+                                            <h6 class="my-2 bg-white p-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h6>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="images/news-3.jpeg" alt="" class="img-fluid w-100">
+                                            <h6 class="my-2 bg-white p-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-12">
+                                <div class="section-title m-0">
+                                    <h4 class="m-0 fw-bold">أحدث الأخبار</h4>
+                                </div>
+                                <div class="bg-white p-1 mb-3">
+                                    <div class="row">
+                                        <div class="col-6 align-self-center pe-0">
+                                            <h6>تصريح عماني بشأن زيارة المبعوث الأممي إلى صنعاء</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="images/news-1.jpeg" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-6 align-self-center pe-0">
+                                            <h6>تصريح عماني بشأن زيارة المبعوث الأممي إلى صنعاء</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="images/news-1.jpeg" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-6 align-self-center pe-0">
+                                            <h6>تصريح عماني بشأن زيارة المبعوث الأممي إلى صنعاء</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="images/news-1.jpeg" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-6 align-self-center pe-0">
+                                            <h6>تصريح عماني بشأن زيارة المبعوث الأممي إلى صنعاء</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="images/news-1.jpeg" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-6 align-self-center pe-0">
+                                            <h6>تصريح عماني بشأن زيارة المبعوث الأممي إلى صنعاء</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="images/news-1.jpeg" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-title m-0">
+                                    <h4 class="m-2 fw-bold">اعلانات</h4>
+                                </div>
+                                <div class="bg-white p-1">
+                                    <div class="col">
+                                        <img src="images/news-1.jpeg" class="img-fluid" alt="">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-1 d-none d-md-block text-center">
+                        <img src="images/ads-2.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-12 d-md-none text-center m-2">
+                        <img src="images/ads.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+
+            </section>
+
+        </div>
+    </div>
+    <!-- Footer -->
+
+    <section id="footer">
+
+
+        <footer class="pt-1 text-white bg-dark">
+
+
+            <!-- Footer Links -->
+            <div class="container-fluid mt-3">
+
+                <!-- Grid row -->
+                <div class="row mt-3">
+
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-sm-12 mx-auto mb-2">
+
+                        <!-- Links -->
+                        <h4 class="fw-bold footer-header px-3">من نحن</h4>
+                        <p class="mx-3">لايك نيوز موقع اخباري مستقبل يقوم بتغطية جميع الأحداث المحلية والعربية والعالمية
+                            بكافة مجالاتها المتعددة</p>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-sm-12 mx-auto mb-2">
+
+                        <!-- Links -->
+                        <h4 class="fw-bold footer-header px-3">روابط مهمة</h4>
+                        <p></p><a href="#" class="text-white mx-3 text-decoration-none">الرئيسية</a></p>
+                        <p></p><a href="#" class="text-white mx-3 text-decoration-none">شروط الاستخدام</a></p>
+                        <p></p><a href="#" class="text-white mx-3 text-decoration-none">سياسة الخصوصية</a></p>
+                        <p></p><a href="#" class="text-white mx-3 text-decoration-none">تواصل معنا</a></p>
+
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-sm-12 mx-auto mb-2">
+
+                        <!-- Links -->
+                        <h4 class="fw-bold footer-header px-3">الأقسام</h4>
+                        <div class="fs-5">
+                            <p class="badge bg-secondary ms-3">أخبار محلية</p>
+                            <p class="badge bg-secondary ms-3">أخبار دولية وعربية</p>
+                            <p class="badge bg-secondary ms-3">اقتصاد</p>
+                            <p class="badge bg-secondary ms-3">رياضة</p>
+                            <p class="badge bg-secondary ms-3">فن وثقافة</p>
+                        </div>
+
+
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-sm-12 mx-auto mb-2">
+
+                        <h4 class="fw-bold footer-header px-3">تواصل معنا</h4>
+                        <p>
+                            <i class="fas fa-home mx-3"></i>اليمن - عدن</p>
+                        <p>
+                            <i class="fas fa-envelope mx-3"></i> info@likenews.com</p>
+                        <p>
+                            <i class="fas fa-phone mx-3"></i> 772344474 ( +967 ) </p>
+                        <p>
+                            <i class="fas fa-print mx-3"></i> 732896589 ( +967 ) </p>
+
+                    </div>
+
+
+                </div>
+                <!-- Grid row -->
+
+                <!-- Grid row -->
+
+                <!-- <div class="row mt-3 d-flex justify-content-center">
+                    <div class="social-links">
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div> -->
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div style="background-color: black;">
+                <div class="text-center pb-1">تطوير وتصميم أحمد بارحيم</div>
+                <div class="text-center pb-1">جميع الحقوق محفوظة ©٢٠٢٢</div>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+
+</body>
+
+</html>

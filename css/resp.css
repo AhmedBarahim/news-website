@@ -1,0 +1,33 @@
+/* Medium Screen */
+@media (max-width: 768px) {
+    /* Navbar */ 
+    .nav-link-text a {
+        color: black !important;
+    }
+    .active-link a {
+        color: #dc3545 !important;;
+     }
+     .img-slider {
+        height: 40vh;
+    }
+  }
+  /* Large Screen */
+@media (min-width: 769px) {
+    /* Navbar */ 
+    .nav-link-text a:hover {
+        color: #dc3545 !important;
+        background-color: white;
+    }
+    .active-link a {
+        color: #dc3545 !important;;
+        background-color: white;
+     }
+     /* Main Slider */
+  .img-slider {
+    height: 60vh
+  }
+  }
+
+  
+  
+  
