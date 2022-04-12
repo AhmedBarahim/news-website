@@ -24,70 +24,71 @@
 </head>
 
 <body>
-    <header>
-        <div class="bg-secondary">
-            <div class="container p-1">
-                <div class="text-white d-flex justify-content-between">
-                    <div>
-                        <i class="fas fa-clock d-inline"></i>
-                        <div class="d-inline" id="getDateTime"></div>
-                    </div>
-                    <div>
-                        <i class="fab fa-facebook mx-1"></i>
-                        <i class="fab fa-twitter mx-1"></i>
-                        <i class="fas fa-envelope mx-1"></i>
-                    </div>
+
+    <div class="bg-secondary">
+        <div class="container p-1">
+            <div class="text-white d-flex justify-content-between">
+                <div>
+                    <i class="fas fa-clock d-inline"></i>
+                    <div class="d-inline" id="getDateTime"></div>
                 </div>
+                <div>
+                    <i class="fab fa-facebook mx-1"></i>
+                    <i class="fab fa-twitter mx-1"></i>
+                    <i class="fas fa-envelope mx-1"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container my-1">
+        <div class="row">
+            <div class="col align-self-center d-none d-md-block">
+                <h2 class="display-5 fw-bold">لايك نيوز</h2>
+            </div>
+
+            <div class="col align-self-center">
+                <img class="img-fluid" src="images/ads.png">
             </div>
 
         </div>
-        <div class="container my-1">
-            <div class="row">
-                <div class="col align-self-center d-none d-md-block">
-                    <h2 class="display-5 fw-bold">لايك نيوز</h2>
-                </div>
 
-                <div class="col align-self-center">
-                    <img class="img-fluid" src="images/ads.png">
-                </div>
-
-            </div>
-
+    </div>
+    <div class="offcanvas offcanvas-start" id="demo">
+        <div class="offcanvas-header p-3">
+            <h1 class="offcanvas-title">لايك نيوز</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
-        <div class="offcanvas offcanvas-start" id="demo">
-            <div class="offcanvas-header p-3">
-                <h1 class="offcanvas-title">لايك نيوز</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-            </div>
-            <hr class="m-0">
-            <div class="offcanvas-body">
-                <ul class="navbar-nav me-auto nav-link-text">
-                    <li class="nav-item active-link mx-md-3">
-                        <a class="nav-link " href="javascript:void(0)">الرئيسية</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">أخبار محلية</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">أخبار دولية وعربية</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">اقتصاد</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">رياضة</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">ثقافة وفن</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-1" type="text" placeholder="بحث">
-                    <button class="btn btn-danger" type="button"><i class="fas fa-search text-light"></i></button>
-                </form>
-            </div>
+        <hr class="m-0">
+        <div class="offcanvas-body">
+            <ul class="navbar-nav me-auto nav-link-text">
+                <li class="nav-item active-link mx-md-3">
+                    <a class="nav-link " href="javascript:void(0)">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)">أخبار محلية</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)">أخبار دولية وعربية</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)">اقتصاد</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)">رياضة</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)">ثقافة وفن</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-1" type="text" placeholder="بحث">
+                <button class="btn btn-danger" type="button"><i class="fas fa-search text-light"></i></button>
+            </form>
         </div>
-        <nav class="navbar navbar-expand-md navbar-dark bg-danger sticky-top">
+    </div>
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-md navbar-dark bg-danger">
             <div class="container">
                 <a class="navbar-brand d-md-none" href="javascript:void(0)">لايك نيوز</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
@@ -121,10 +122,7 @@
                 </div>
             </div>
         </nav>
-    </header>
-    <div class="container-fluid">
-
-        <div class="row sticky-top">
+        <div class="row m-0">
             <div class="col-12 col-lg-1 p-0 sticky-top">
                 <div class="bg-dark p-2 text-center text-white fw-bold px-2">
                     <span class="spinner-grow spinner-grow-sm me-1 text-danger"></span> الأخبار
@@ -146,7 +144,8 @@
                         <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
                         بنلاتنب لخبهخ قهعثخه لتثنةم نخهخبلابخنخبلانخ منملا.
                         <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
-                        بلتبتل خلنبملمبلز كلنبنلحبنحخنلخي خخهثخهخهثخخحسنحسحنحسجثقنج نلقحنحمقنللزلبخحلينحخليز.
+                        بلتبتل خلنبملمبلز كلنبنلحبنحخنلخي خخهثخهخهثخخحسنحسحنحسجثقنج قه٤تله هرته٠٤ تثقهله تبهخرتهخق
+                        ترهخقترخه خثرتخه تثرصخهرتهخق ن تهخق ت.
                         <span class="marquee__seperator"><i class="fas fa-dot-circle"></i></span>
                         منيمشنيمنيم نيرتبيت ه خلحخث لخثلتث ثخحلثعل ضح ثخخث ثخلثخل ثخلاخلا ز
                         <span class="marquee__seperator"><i class="fas fa-bdot-circle"></i></span>
@@ -172,9 +171,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>    
     </div>
-    </div>
+    
+
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 col-lg-6 p-0">
@@ -257,7 +258,7 @@
                     <div class="col-lg-1 d-none d-md-block text-center">
                         <img src="images/ads-2.png" class="img-fluid" alt="">
                     </div>
-                    <div class="col-md-12 d-md-none text-center m-2">
+                    <div class="col-md-12 d-md-none text-center">
                         <img src="images/ads.png" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-10">
@@ -278,7 +279,7 @@
                                                 <h4 class="my-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h4>
                                                 <p>لتحخفت لتح ح بلنحخب لن حيحلن حق يحنلحقم حمينحخ قاحم نحق قنا حمبحخ
                                                     نقحبحمؤحماحمب نحبممح ابمحابمحانبمح حما
-                                                    حقنامحبنامحبناحمنابلمحانمحانحمينحمنح</p>
+                                                    برفقلاقلاغ فا عغف ىتغ ىفغى</p>
                                             </div>
                                         </div>
                                     </div>
@@ -320,7 +321,7 @@
                                                 <h4 class="my-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h4>
                                                 <p>لتحخفت لتح ح بلنحخب لن حيحلن حق يحنلحقم حمينحخ قاحم نحق قنا حمبحخ
                                                     نقحبحمؤحماحمب نحبممح ابمحابمحانبمح حما
-                                                    حقنامحبنامحبناحمنابلمحانمحانحمينحمنح</p>
+                                                    اىفى فىغ عغت٦اغف ىفغقاغتغتن ةعةعةغةغعةا </p>
                                             </div>
                                         </div>
                                     </div>
@@ -362,7 +363,7 @@
                                                 <h4 class="my-2">تصريح عماني بشأن المبعوث الأممي إلى صنعاء</h4>
                                                 <p>لتحخفت لتح ح بلنحخب لن حيحلن حق يحنلحقم حمينحخ قاحم نحق قنا حمبحخ
                                                     نقحبحمؤحماحمب نحبممح ابمحابمحانبمح حما
-                                                    حقنامحبنامحبناحمنابلمحانمحانحمينحمنح</p>
+                                                    تةعةغه هغعة غىعى ةىلاغتعغت ةاغت</p>
                                             </div>
                                         </div>
                                     </div>
@@ -451,7 +452,7 @@
                     <div class="col-lg-1 d-none d-md-block text-center">
                         <img src="images/ads-2.png" class="img-fluid" alt="">
                     </div>
-                    <div class="col-md-12 d-md-none text-center m-2">
+                    <div class="col-md-12 d-md-none text-center">
                         <img src="images/ads.png" class="img-fluid" alt="">
                     </div>
                 </div>
